@@ -23,7 +23,13 @@ def create_image_data():
             except Exception as e:
                 pass # not proper practice to pass but not interested in retrieving every single image
     return cat_image_data
-                
+
+def individual_image(path):
+    image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+    color = cv2.imread(path, cv2.COLOR_BGR2RGB)
+    resized = cv2.resize(image, (IMG_SIZE, IMG_SIZE))
+    return (resized, color)
+    
         
         
         

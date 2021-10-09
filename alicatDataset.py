@@ -16,7 +16,7 @@ class AlicatDataset(Dataset):
 
     def __getitem__(self, index):
         image = self.data[index][0]
-        label = int(self.data[index][1])
+        label = torch.tensor(int(self.data[index][1]))
 
         if self.transform:
             image = self.transform(image)
